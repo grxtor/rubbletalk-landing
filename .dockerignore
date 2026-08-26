@@ -1,0 +1,10 @@
+node_modules
+dist
+.git
+.claude
+design
+*.md
+# Kökteki logo kaynakları; kullanılan kopyalar public/ içinde.
+icon-*.png
+logo-*.png
+rubbletalk_*.png

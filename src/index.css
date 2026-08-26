@@ -1,0 +1,91 @@
+@import "tailwindcss";
+
+@theme {
+  /* Üç ses: editorial serif display, nötr sans gövde, mono mikro-etiket */
+  --font-display: "Playfair Display", "Iowan Old Style", Georgia, serif;
+  --font-sans: "Geist", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  /* Sahne: sıcak siyah. Saf siyah değil, derinlik ölür. */
+  --color-ground: #0b0a09;
+  --color-ground-soft: #14120f;
+  --color-chalk: #f4f1ec;
+  --color-chalk-soft: #a29a90;
+
+  /* Gövde: kırık beyaz. Saf beyaz değil. */
+  --color-paper: #fbfaf8;
+  --color-paper-soft: #f2efe9;
+  --color-ink: #14110e;
+  --color-ink-soft: #6b635a;
+
+  /* Hatlar */
+  --color-rule: #e2ddd4;
+  --color-rule-dark: #2a2620;
+
+  /* Marka rengi. Sayfadaki tek vurgu bu.
+     Logodan örneklendi: RubbleTalk camgöbeği. */
+  --color-signal: #0dc9e9;
+  --color-signal-deep: #0bb0cd;
+
+  /* Alarm yalnızca gerçek bir durum bildirir (mühürlenmiş sarsıntı kaydı).
+     Dekoratif vurgu olarak kullanılmaz. */
+  --color-alarm: #e0483a;
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-paper);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background-color: var(--color-signal);
+    color: var(--color-ink);
+  }
+}
+
+@utility shell {
+  margin-inline: auto;
+  width: 100%;
+  max-width: 82rem;
+  padding-inline: clamp(1.5rem, 4vw, 3.5rem);
+}
+
+/* Display: satırlar birbirine kenetleniyor. Editorial hissin ana kaynağı. */
+@utility display {
+  font-family: var(--font-display);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 0.94;
+}
+
+@utility label {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+/* Tek köşe sistemi:
+     yüzeyler (kart, panel, görsel çerçeve) yumuşak,
+     kontroller (buton, etiket, çubuk) kapsül. */
+@utility edge {
+  border-radius: 1rem;
+}
+
+@utility edge-sm {
+  border-radius: 0.625rem;
+}
+
+@utility edge-control {
+  border-radius: 999px;
+}

@@ -1,0 +1,191 @@
+{
+  "meta": {
+    "name": "Editorial Instrument",
+    "description": "Pear.no referansından çıkarılan tasarım DNA'sı: ince serif display + teknik mono etiketler + hairline ölçüm gridi. SETE için uyarlanacak.",
+    "source_references": ["https://pear.no/"],
+    "created_at": "2026-08-25"
+  },
+
+  "design_system": {
+    "color": {
+      "palette_type": "Doygun tek renk zemin + tam kaplayan görsel; nötr siyah taşıyıcı",
+      "primary": { "hex": "#0B0A09", "role": "Sıcak siyah, sayfa taşıyıcısı" },
+      "secondary": { "hex": "#1B4FD8", "role": "Doygun kobalt, sahne zemini" },
+      "accent": { "hex": "#B5442E", "role": "Kiremit kırmızısı, görselden gelen tek sıcak vurgu" },
+      "neutral": {
+        "scale": ["#FFFFFF", "#F4F2EF", "#D9D5CF", "#8C877F", "#403C37", "#1A1815", "#0B0A09"],
+        "usage": "Kırık beyaz kağıt tonu; saf beyaz yerine sıcağa kaçan nötrler"
+      },
+      "surface": {
+        "background": "#0B0A09",
+        "card": "transparent — kart yok, içerik doğrudan zemine oturuyor",
+        "elevated": "Hairline çerçeveli alanlar; gölge yerine çizgiyle ayrım"
+      },
+      "contrast_strategy": "Yüksek: ince açık tipografi koyu/doygun zemin üzerinde"
+    },
+
+    "typography": {
+      "type_scale": {
+        "display": { "size": "clamp(3rem, 7vw, 6rem)", "weight": "300", "line_height": "0.88", "tracking": "-0.02em" },
+        "heading_1": { "size": "clamp(2.5rem, 5.5vw, 4.875rem)", "weight": "300", "line_height": "0.9", "tracking": "-0.02em" },
+        "heading_2": { "size": "clamp(1.75rem, 3.6vw, 2.875rem)", "weight": "300", "line_height": "0.95", "tracking": "-0.018em" },
+        "heading_3": { "size": "1.0625rem", "weight": "500", "line_height": "1.3", "tracking": "-0.01em" },
+        "body": { "size": "0.9375rem", "weight": "400", "line_height": "1.65", "tracking": "0" },
+        "body_small": { "size": "0.875rem", "weight": "400", "line_height": "1.6", "tracking": "0" },
+        "caption": { "size": "0.8125rem", "weight": "400", "line_height": "1.5", "tracking": "0" },
+        "overline": { "size": "0.6875rem", "weight": "500", "line_height": "1", "tracking": "0.16em" }
+      },
+      "font_families": {
+        "heading": "Flecha (light serif) → ikame: Instrument Serif / Newsreader 300",
+        "body": "GT Standard → ikame: Inter",
+        "mono": "GT Standard Mono → ikame: JetBrains Mono"
+      },
+      "font_style_notes": "Üç ses: ince serif display, nötr sans gövde, geniş harf aralıklı mono uppercase mikro-etiket. Display'de line-height 1'in ALTINDA (0.88) — satırlar birbirine kenetleniyor. Bu tek başına 'editorial' hissinin ana kaynağı."
+    },
+
+    "spacing": {
+      "base_unit": "4px",
+      "scale": [4, 8, 12, 16, 24, 32, 48, 64, 96, 144, 208],
+      "content_density": "Çok seyrek — ekranın büyük kısmı boş, içerik bir köşeye toplanıyor",
+      "section_rhythm": "Bölümler arası 144–208px; sahne içi ise ekran boyu duraklar"
+    },
+
+    "layout": {
+      "grid_system": "Görünür hairline ölçüm gridi — dikey kenar çizgileri, yatay ayraçlar, köşe nişangahları",
+      "max_content_width": "Tam genişlik; metin blokları 34–46ch ile sınırlı",
+      "columns": "12, ama içerik asimetrik yerleşiyor (sol alt üçte bir)",
+      "gutter": "24–48px",
+      "breakpoints": ["768px", "1024px", "1440px"],
+      "alignment_tendency": "Asimetrik sola yaslı; görsel hakim, tipografi köşede"
+    },
+
+    "shape": {
+      "border_radius": { "small": "2px", "medium": "4px", "large": "8px", "pill": "999px" },
+      "border_usage": "1px hairline her yerde — kutu değil, ölçüm çizgisi olarak",
+      "divider_style": "Saç teli çizgiler; uçlarda küçük nişangah/artı işaretleri"
+    },
+
+    "elevation": {
+      "shadow_style": "Gölge neredeyse yok",
+      "levels": { "low": "none", "medium": "none", "high": "1px hairline çerçeve" },
+      "depth_cues": "Derinlik gölgeyle değil, katman ve doku (halftone) ile kuruluyor"
+    },
+
+    "iconography": {
+      "style": "Geometrik, minimal, çizgisel nişangahlar",
+      "stroke_weight": "1px",
+      "size_scale": ["8px", "12px", "16px"],
+      "preferred_set": "Özel — artı, elmas, köşe ayracı"
+    },
+
+    "motion": {
+      "easing": "cubic-bezier(0.16, 1, 0.3, 1) — güçlü çıkışlı, yumuşak duruş",
+      "duration_scale": { "micro": "200ms", "normal": "600ms", "macro": "1000–1400ms" },
+      "entrance_pattern": "Maske altından satır satır yükselme",
+      "exit_pattern": "Yukarı maskeye çekilme + opaklık",
+      "philosophy": "Hareket scroll'a kenetli; kendi başına oynayan hiçbir şey yok. Kesme yok, her şey akıyor."
+    },
+
+    "components": {
+      "button_style": "Küçük, mono uppercase, hairline çerçeve veya dolu koyu kutu; içinde ok işareti",
+      "input_style": "Alt çizgi tabanlı",
+      "card_style": "Kart yok — içerik zemine oturur, hairline ile ayrılır",
+      "navigation_pattern": "Minimal üst bar; sol logo, sağ tek eylem",
+      "modal_style": "Tam ekran örtü",
+      "list_style": "Hairline ayraçlı satırlar",
+      "component_notes": "Kart/gölge yerine çizgi ve boşluk. Bu, kurumsal şablon görünümünden kaçmanın ana yolu."
+    }
+  },
+
+  "design_style": {
+    "aesthetic": {
+      "mood": "Sakin, otoriter, sinematik",
+      "visual_metaphor": "Teknik ölçüm föyü ile sanat kitabı arasında",
+      "era_influence": "Neoklasik resim + İsviçre baskı gridi",
+      "genre": "Editorial / gallery",
+      "personality_traits": ["ölçülü", "kendinden emin", "az konuşan"],
+      "adjectives": ["ince", "geniş", "kenetli", "sessiz"]
+    },
+    "visual_language": {
+      "complexity": "Düşük öğe sayısı, yüksek detay kalitesi",
+      "ornamentation": "Neredeyse yok — süs sadece hairline nişangahlar",
+      "whitespace_usage": "Cömert; boşluk başlı başına içerik",
+      "visual_weight_distribution": "Ağırlık görselde, tipografi hafif karşı ağırlık",
+      "focal_strategy": "Tek büyük görsel + tek cümle",
+      "contrast_level": "Yüksek ton, düşük renk",
+      "texture_usage": "Halftone/dither doku kenarlarda — baskı hissi"
+    },
+    "composition": {
+      "hierarchy_method": "Ölçek ve boşluk; renkle değil",
+      "balance_type": "Asimetrik",
+      "flow_direction": "Dikey, kesintisiz",
+      "grouping_strategy": "Mikro-etiket + başlık + tek paragraf üçlüsü",
+      "negative_space_role": "Baskın — sahnenin nefesi"
+    },
+    "imagery": {
+      "photo_treatment": "Tam kaplayan, işlenmemiş, hakim",
+      "illustration_style": "Klasik resim",
+      "graphic_elements": "Hairline grid, nişangah, halftone",
+      "pattern_usage": "Dither noktalama",
+      "image_shape": "Tam kanama veya hairline çerçeveli dikdörtgen"
+    },
+    "interaction_feel": {
+      "feedback_style": "Sessiz — küçük ton kaymaları",
+      "hover_behavior": "İnce; çizgi uzaması, hafif kayma",
+      "transition_personality": "Uzun, akışkan, kesmesiz",
+      "loading_style": "Kararma/açılma",
+      "microinteraction_density": "Düşük ama kaliteli"
+    },
+    "brand_voice_in_ui": {
+      "tone": "Doğrudan, iddialı, kısa",
+      "formality": "Resmi ama soğuk değil",
+      "cta_style": "Mono uppercase, ok işaretli, kısa",
+      "empty_state_approach": "Tek cümle",
+      "error_tone": "Sakin"
+    }
+  },
+
+  "visual_effects": {
+    "overview": {
+      "effect_intensity": "orta-yüksek",
+      "performance_tier": "orta — canvas + video, WebGL sahnesi yok",
+      "fallback_strategy": "Hareket azaltma tercihinde scrub anlık, doku statik",
+      "primary_technology": "GSAP ScrollTrigger + canvas + video"
+    },
+    "background_effects": {
+      "type": "Doygun düz zemin + tam kaplayan medya",
+      "description": "Zemin rengi bölümden bölüme kayıyor",
+      "technology": "CSS + scroll'a bağlı renk geçişi",
+      "params": { "color_palette": ["#0B0A09", "#1B4FD8"], "speed": "yavaş", "density": "yok", "opacity": "1", "blend_mode": "normal" }
+    },
+    "particle_systems": { "enabled": false },
+    "3d_elements": { "enabled": false },
+    "shader_effects": { "enabled": false },
+    "scroll_effects": {
+      "parallax": { "enabled": true, "layers": 2, "depth_range": "küçük", "speed_curve": "doğrusal" },
+      "scroll_triggered_animations": {
+        "enabled": true,
+        "trigger_points": "Sahne içi anlamlı kareler",
+        "animation_type": "Maskeli satır açılışı + medya ilerlemesi",
+        "scrub_behavior": "Yumuşatmalı scrub; scroll hızı doğrudan zaman çizelgesini sürüyor"
+      },
+      "scroll_morphing": { "enabled": true, "description": "Medya tam kanamadan çerçeveli panele geçiyor" }
+    },
+    "text_effects": {
+      "type": "Maskeli satır açılışı",
+      "description": "Satırlar overflow maskesinin altından yükseliyor; büyük başlıklarda sıkı line-height sayesinde satırlar birbirine kenetlenerek geliyor",
+      "technology": "GSAP SplitText",
+      "params": { "split_strategy": "lines + mask", "animation_per_unit": "yPercent 110 → 0", "stagger": "0.08–0.1s", "effect_style": "kesmesiz, uzun ease" }
+    },
+    "cursor_effects": { "enabled": false },
+    "image_effects": {
+      "type": "Halftone/dither doku katmanı",
+      "description": "Görsel kenarlarında baskı noktalaması",
+      "technology": "CSS mask / SVG turbulence",
+      "params": { "filter_pipeline": "hafif doygunluk düşürme", "hover_transform": "yok", "reveal_animation": "maskeli", "distortion_type": "yok" }
+    },
+    "glassmorphism_neumorphism": { "enabled": false },
+    "canvas_drawings": { "enabled": true, "type": "doku/grid", "technology": "canvas 2D" },
+    "svg_animations": { "enabled": true, "type": "hairline çizgi çizilmesi" }
+  }
+}
